@@ -2,7 +2,7 @@
 Une porte OR 
 #
 
-# Curseur en position du début #
+# Curseur en position du dï¿½but #
 Start,1;
 
 
@@ -53,4 +53,4 @@ SecondBit = -1;
 Start:OR(PremierBit, SecondBit);
 
 100,-1; # On termine par 100 si on rate #
-999,-1; # On termine par 999 si on réussi #
+999,-1; # On termine par 999 si on rÃ©ussi #
