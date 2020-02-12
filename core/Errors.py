@@ -1,5 +1,5 @@
 class CythanError(Exception):
-   """Base class for other exceptions"""
+   """Base class for Cythan other exceptions"""
    pass
 
 # --- CYTHAN MACHINE ERRORS ---
@@ -22,3 +22,14 @@ class DataPointer(CythanError):
 class EndPoint(CythanError):
 	"""Machine ended."""
 	pass
+
+
+# --- COMPILER ERRORS ---
+
+
+
+# --- LINKER ERRORS ---
+
+class BreakPointMet(CythanError):
+  """Raised when a breakpoint is met"""
+  pass

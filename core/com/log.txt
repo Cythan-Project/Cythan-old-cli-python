@@ -1,0 +1,7 @@
+
+[2020-02-12 17:39:13] Start
+DEBUG - [2020-02-12 17:39:13] {core.Linker} <module>: Linker imported
+DEBUG - [2020-02-12 17:39:13] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-02-12 17:39:13] {__main__} <module>: Setting up Command
+DEBUG - [2020-02-12 17:39:13] {__main__} <module>: Setting up Linker
+INFO - [2020-02-12 17:39:13] {__main__} <module>: Launching Commands menu

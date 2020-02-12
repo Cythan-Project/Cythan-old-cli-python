@@ -4,8 +4,8 @@ from time import gmtime, strftime
 class Log():
 
     def __init__(self,**kwargs):
-        self.__log_file = kwargs.get("log_file","core/include/com/log.txt")
-        self.__log_levels = kwargs.get("log_level",["INFO","TEST","WARNING","ERROR"])
+        self.__log_file = kwargs.get("log_file","core/com/log.txt")
+        self.log_levels = kwargs.get("log_level",["INFO","TEST","WARNING","ERROR"])
         with open(self.__log_file,"a") as f:
             f.write("\n["+strftime("%Y-%m-%d %H:%M:%S", gmtime())+"]"+" Start\n")
     
@@ -19,7 +19,7 @@ class Log():
         if classCaller != "": classCaller +=" "
         methodCaller = stack[2][0].f_code.co_name
         log = log_type+" - ["+strftime("%Y-%m-%d %H:%M:%S", gmtime())+"] {"+str(modCaller.__name__)+"} "+str(classCaller)+str(methodCaller)+": "+str(message)
-        if log_type in self.__log_levels:
+        if log_type in self.log_levels:
             print("["+log_type+"] "+str(classCaller)+str(methodCaller)+": "+str(message))
         with open(self.__log_file,"a") as f:
             f.write(log+"\n")

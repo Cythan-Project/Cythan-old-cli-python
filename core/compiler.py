@@ -1,3 +1,7 @@
+from core import Errors
+
+import core.com as com
+
 
 class BCLcompiler():
 
@@ -72,6 +76,7 @@ class BCLcompiler():
 
 
 
+com.Out.debug("Compiler imported")
 
 """ Old code, not suitable
 class CythanCodeGenerator(): # FINI !
