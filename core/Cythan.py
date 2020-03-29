@@ -2,13 +2,13 @@ from core import Errors
 
 class CythanMachine():
 
-  def __init__(self, data):
+  def __init__(self, data, negdata=[-1]*100):
 
     self.data = data
-    self.negdata = [-1]*100
+    self.negdata = negdata
 
   def turn(self, nb):
-
+    
     def combine(x,y):
       if x[0] == -1:r1=y[0]
       else:r1=x[0]

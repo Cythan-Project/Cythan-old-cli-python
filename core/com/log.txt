@@ -1,7 +1,63 @@
 
-[2020-02-12 17:39:13] Start
-DEBUG - [2020-02-12 17:39:13] {core.Linker} <module>: Linker imported
-DEBUG - [2020-02-12 17:39:13] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-02-12 17:39:13] {__main__} <module>: Setting up Command
-DEBUG - [2020-02-12 17:39:13] {__main__} <module>: Setting up Linker
-INFO - [2020-02-12 17:39:13] {__main__} <module>: Launching Commands menu
+[2020-03-29 21:49:24] Start
+DEBUG - [2020-03-29 21:49:24] {core.Linker} <module>: Linker imported
+DEBUG - [2020-03-29 21:49:24] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-03-29 21:49:24] {__main__} <module>: Setting up Command
+DEBUG - [2020-03-29 21:49:24] {__main__} <module>: Setting up Linker
+INFO - [2020-03-29 21:49:24] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-03-29 21:49:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
+DEBUG - [2020-03-29 21:49:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Liste des fonctions :
+
+next [INT] [MACHINE_ID]
+configure [MACHINE_ID] [*KWARGS]
+infos [MACHINE_ID] [DATA_START] [NUMBER_OF_BYTE]
+logs (read [COUNT]|setlevel [NAME])
+quit
+clear
+help [command]
+
+Tapez 'help COMMANDE' pour plus d'informations sur une commande en particulier.
+Tapez 'help cmd' pour les informations d'utillisation de la ligne de commandes.
+DEBUG - [2020-03-29 21:49:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'configure']
+DEBUG - [2020-03-29 21:49:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour configure:
+Syntaxe: configure [MACHINE_ID] [*KWARGS]
+
+Yes
+
+[2020-03-29 22:16:42] Start
+DEBUG - [2020-03-29 22:16:42] {core.Linker} <module>: Linker imported
+DEBUG - [2020-03-29 22:16:42] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Command
+DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Linker
+DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Compiler
+INFO - [2020-03-29 22:16:42] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-03-29 22:16:46] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler']
+DEBUG - [2020-03-29 22:16:46] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Erreur d'argument:
+Vous n'avez pas le bon nombre de paramètres.
+DEBUG - [2020-03-29 22:17:00] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
+DEBUG - [2020-03-29 22:17:00] {__main__} compileBCL: loading BCL file at: 'program/or.txt
+DEBUG - [2020-03-29 22:17:00] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
+
+[2020-03-29 22:17:19] Start
+DEBUG - [2020-03-29 22:17:19] {core.Linker} <module>: Linker imported
+DEBUG - [2020-03-29 22:17:19] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Command
+DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Linker
+DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Compiler
+INFO - [2020-03-29 22:17:19] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-03-29 22:17:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
+DEBUG - [2020-03-29 22:17:31] {__main__} compileBCL: loading BCL file at: 'program/or.txt
+DEBUG - [2020-03-29 22:17:31] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
+DEBUG - [2020-03-29 22:17:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Compiled succesfully at 'program/or.cyt'
+
+[2020-03-29 22:18:27] Start
+DEBUG - [2020-03-29 22:18:27] {core.Linker} <module>: Linker imported
+DEBUG - [2020-03-29 22:18:27] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Command
+DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Linker
+DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Compiler
+INFO - [2020-03-29 22:18:27] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-03-29 22:18:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
+DEBUG - [2020-03-29 22:18:49] {__main__} compileBCL: loading BCL file at: 'program/or.txt
+DEBUG - [2020-03-29 22:18:49] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
+DEBUG - [2020-03-29 22:18:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Compiled succesfully at 'program/or.cyt'

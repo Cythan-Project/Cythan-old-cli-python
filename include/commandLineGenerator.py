@@ -1,5 +1,6 @@
 import shlex
 
+import core.com as com
 
 # La classe de la ligne de commande
 class CommandLine():
@@ -101,6 +102,7 @@ class CommandLine():
 
   # executer une commande
   def __command(self,execute):
+    com.Out.debug("CMD:"+str(execute))
     if isinstance(execute,str):execute = shlex.split(execute)
     if execute == []: return None
     returning = None
@@ -116,4 +118,5 @@ class CommandLine():
           find =True
     if not find:
       returning = self.__msgUnknow
+    com.Out.debug("RET:"+str(returning))
     return returning
