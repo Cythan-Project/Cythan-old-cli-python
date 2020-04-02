@@ -12,7 +12,7 @@ import os
 from random import randint, sample
 
 com.Out.debug("Setting up Command")
-CommandLine = include.commandLineGenerator.CommandLine()
+CommandLine = include.commandLineGenerator.CommandLine(debug=False)
 com.Out.debug("Setting up Linker")
 InstanceManager = CythanInstanceManager()
 ModuleManager = CythanModuleManager()
