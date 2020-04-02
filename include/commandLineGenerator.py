@@ -11,12 +11,12 @@ class CommandLine():
     self.cmdReturn = ""
     self.vars = {}
 
-    self.__msgStart = kwargs.get("start","Invite de commande par Cyprien Bourotte\nTapez 'help' pour la liste des commandes.")
-    self.__msgWrgParam = kwargs.get("wrongParameter","Le parametre $ doit etre $$")
-    self.__msgUnknow = kwargs.get("unknow","La commande est inconnue.\nTapez 'help' pour obtenir la liste des commandes")
-    self.__paramList = kwargs.get("parameterList",["Vrai/Faux","du texte","un nombre","un float"])
+    self.__msgStart = kwargs.get("start","Cythan machine project by <discursif/>\nWrite 'help' for command list.")
+    self.__msgWrgParam = kwargs.get("wrongParameter","Parameter $ muyst be $$")
+    self.__msgUnknow = kwargs.get("unknow","Unknow command.\nWrite 'help' for command list.")
+    self.__paramList = kwargs.get("parameterList",["True/False","some text","a number","a float"])
     self.__haveMsgError = kwargs.get("commandErrorFeedback",True)
-    self.__msgArguments = kwargs.get("argumentsError","Vous n'avez pas le bon nombre de paramètres.")
+    self.__msgArguments = kwargs.get("argumentsError","You don't have the right number of parameters")
 
     self.__cmdErrorFeedback = kwargs.get("commandErrorFeedback",True)
     self.__debug = kwargs.get("debug",True)
@@ -29,44 +29,47 @@ class CommandLine():
   def addFunction(self,caller = None) -> "Methode de passage":
     def inner(funct) -> "retourne la nouvelle fonction":
 
-      def newFunct(*arg,**kwargs) -> "Nouvelle fonction":
+      def newFunct(*arg,**kwargs) -> "New function":
+
+        def convert(typeIn,element):
+          if typeIn == bool:
+            try: element = bool(element)
+            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[0]))
+          elif typeIn == str:
+            try: element = str(element)
+            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[1]))
+          elif typeIn == int:
+            try: element = int(element)
+            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[2]))
+          elif typeIn == float:
+            try: element = float(element)
+            except: raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[3]))
+          return element
         # On rajoute le code de tester si les arguments sont bons
         new_args = []
         i = 0
         for annot in list(funct.__annotations__.values()):
           
-
           if annot == max:
             param = " ".join(list(arg)[i:])
             new_args.append(param)
             break
           try:
             param = arg[i]
-          except:
+          except IndexError:
             if isinstance(annot,tuple):
-              try:
-                if not isinstance(annot[0],arg[i]): param = annot[0]
-                else:param = annot[1]
-              except IndexError: param = annot[1]
+              new_args.append(annot[1])
+              i+=1
+              continue
             else: raise AssertionError(self.__msgArguments)
-          if annot == "return": pass
-          elif annot == None:
-            pass
-          
+          if annot == "return" or annot == None:pass
+          elif isinstance(annot,tuple):
+            try:
+              new_args.append(convert(annot[0],param))
+            except AssertionError:
+              new_args.append(annot[1])
           # Oblige d'avoir un argument
-          elif annot == bool:
-            try: param = bool(param)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[0]))
-          elif annot == str:
-            try: param = str(param)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[1]))
-          elif annot == int:
-            try: param = int(param)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[2]))
-          elif annot == float:
-            try: param = float(param)
-            except: raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[3]))
-          new_args.append(param)
+          else:new_args.append(convert(annot,param))
           i+=1
         return funct(*tuple(new_args),**kwargs) # Si tout est bon, on execute la fonction
 
@@ -113,7 +116,9 @@ class CommandLine():
           if funct.caller: returning = funct(funct.caller,*execute[1:],**self.vars)
           else:returning = funct(*execute[1:],**self.vars)
         except AssertionError as err:
-          returning ="Erreur d'argument:\n"+str(err)
+          returning ="Argument Error:\n"+str(err)
+        except BaseException as err:
+          returning = "Unhandle Error:\n"+str(err)
         finally:
           find =True
     if not find:

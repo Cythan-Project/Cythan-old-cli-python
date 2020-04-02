@@ -24,7 +24,9 @@ class CythanMachine():
       try:
         if PPP[0] == -1: dataToSet = [-1,-1]
         elif PPP[1] == -1:raise Errors.EndPoint("Machine Ended")
-      except:raise Errors.MinusOneRuleError("HARDWARE got a -1 rule problem.")
+      except Errors.EndPoint:raise
+      except BaseException:
+        raise Errors.MinusOneRuleError("HARDWARE got a -1 rule problem.")
 
       try:
         if PPP[0] >=0:dataToSet = self.data[PPP[0]]

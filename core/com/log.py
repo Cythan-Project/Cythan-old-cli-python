@@ -20,7 +20,7 @@ class Log():
         methodCaller = stack[2][0].f_code.co_name
         log = log_type+" - ["+strftime("%Y-%m-%d %H:%M:%S", gmtime())+"] {"+str(modCaller.__name__)+"} "+str(classCaller)+str(methodCaller)+": "+str(message)
         if log_type in self.log_levels or "ALL" in self.log_levels:
-            print(("["+log_type+"] "+str(classCaller)+str(methodCaller)+": "+str(message)).replace("\n","\\n"))
+            print(("["+log_type+"] "+str(methodCaller)+": "+str(message)).replace("\n","\\n"))
         with open(self.__log_file,"a") as f:
             f.write(log+"\n")
 

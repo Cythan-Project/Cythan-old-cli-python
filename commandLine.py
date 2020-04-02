@@ -5,9 +5,11 @@ from core import Errors
 
 import core.com as com
 
-from random import randint, sample
-
 import include.commandLineGenerator
+
+
+import os
+from random import randint, sample
 
 com.Out.debug("Setting up Command")
 CommandLine = include.commandLineGenerator.CommandLine()
@@ -21,24 +23,91 @@ CompilerManager = BCLcompiler()
 # |  Basic Cythan commands
 # O---------------
 
+# To add:
+# set X to Y
+# read X
+# follow X (print for every next)
+
+# to do:
+# simplified next to n and break to b and compile to c (shortcut)
+# log command
+# log errors + print position in debug mode
+
 @CommandLine.addFunction()
-def nextgen(nbGen:(int,1),machineID:(int,0),**kwargs) -> "next [INT] [MACHINE_ID]":
-  """Execute the Cythan Code of the machine.
-  MACHINE_ID: empty for the first machine, precize the machine number"""
-  for x in range(nbGen):
-    try:
-      InstanceManager.next(machineID)
-    except Errors.BreakPointMet as err:
-      return "Breakpoint met at next "+str(x)+":"+err
-    except AssertionError:
-      return "No Cythan Machine have ID:"+str(machineID)
+def nextgen(machineName:str,nbGen:(int,1),**kwargs) -> "next <MACHINE_NAME> [INT]":
+  """Execute the Cythan Code of the machine."""
+  try:
+    InstanceManager.advance(machineName,nbGen)
+  except Errors.BreakPointMet as err:
+    return "Breakpoint met at next "+str(x)+":"+err
+  except KeyError:
+    return AssertionError("No Cythan Machine have name: '"+str(machineName)+"'")
   return "Execution done."
+
+@CommandLine.addFunction()
+def debug(machineName:str,**kwargs) -> "debug <MACHINE_NAME>":
+  """Print information about the machine <MACHINE_NAME>"""
+  try:
+    def section(name,dictio):
+      returning = "-"*60+"\n"+name+"\n"+"-"*60+"\n"
+      for x,y in dictio.items(): returning += x+":"+str(y)+"\n"
+      return returning
+    data = InstanceManager.instances[machineName].machine.data
+    negdata = InstanceManager.instances[machineName].machine.negdata
+    bp = InstanceManager.instances[machineName].breakpoints
+    mod = InstanceManager.instances[machineName].modules
+    printable = "DEBUGS INFOS :\n"
+    printable += section("DATA",{"pointer":data[0][0],"adding unit":data[0][1],"positive length":len(data),"negative length":len(negdata)})
+    if data[0][0] >=0: printable += "pointed:"+str(data[data[0][0]])+"\n"
+    else: printable += "pointed:"+str(negdata[-data[0][0]])
+    printable += section("BREAKPOINTS",{"value = "+str(x[0]):"position = "+str(x[1]) for x in bp})
+    printable += section("MODULES",{})
+    printable += "Module manager is still in devellopement !"+"\n"
+    return printable
+    
+  except KeyError:
+    return AssertionError("No Cythan Machine have name: '"+str(machineName)+"'")
+  return "Execution done."
+
+@CommandLine.addFunction()
+def listCythan(typeToFind:str,**kwargs) -> "list (machine|program)":
+  """ - 'list machine' list all the loaded machine.
+ - 'list program' list all the compiled program in 'program' folder.
+Use the 'debug' command for more informations"""
+  if typeToFind == "machine":
+    return "list of machines:\n - "+"\n - ".join(InstanceManager.instances.keys())
+  elif typeToFind == "program":
+    return "list of programs:\n - "+"\n - ".join([ x for x in os.listdir("program/") if x.split(".")[-1] =="cyt"])
+  raise AssertionError("Second Argument must be 'machine' or 'program'")
+
+
+@CommandLine.addFunction()
+def addBreak(machineName:str,value:int,position:int,subPosition:(int,0),**kwargs) -> "break <MACHINE_NAME> <VALUE> <MEMORY_POSITION> [0|1]":
+  """Add a breakpoint to the machine of the program called <MACHINE_NAME>.
+If no memory position is set, it will take data[0][0] (pointer position).
+Break will stop the machine once the memory at MEMORY_POSITION is <VALUE>.
+You can precise for positive number if it is on the first or second memory cell.
+Exemple:
+ - 'break machine 20' will stop once the pointer position get to 20
+ - 'break machine -5 3' will stop once -5 is in the 3:0 position
+ - 'break machine -7 75 1' will stop once -7 is in the 75:1 position
+"""
+  if position < 0:isneg = True
+  else:isneg = False
+  try:
+    if isneg:InstanceManager.addBreak(machineName,value,position)
+    else:InstanceManager.addBreak(machineName,value,position,subPosition)
+  except KeyError:
+    return AssertionError("No Cythan Machine have name: '"+str(machineID)+"'")
+  return "Breakpoint added to "+machineName+". It will activate when value "+str(value)+" will be in "+str(position)+":"+str(subPosition)
+
+
 
 @CommandLine.addFunction()
 def compileBCL(subcommand:str,arg1:str,arg2:(str,""),**kwargs) -> "compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))":
   """Compile a BCL language to Cythan code.
   compiler compile <input_path> <output_name>:
-    Compile a file at the <input_path> path written in BCL to Cythan language usable by the 'start' command.
+    Compile a file at the <input_path> path (from main.py) written in BCL to Cythan language usable by the 'start' command.
     The output file will be at program/<output_name> in the cythan project.
     By default it is "[input_file_name].cyt". It will earse if already exist.
     BCL language syntax can be found in the cythan github page README
@@ -74,14 +143,23 @@ def compileBCL(subcommand:str,arg1:str,arg2:(str,""),**kwargs) -> "compiler (com
 
 
 @CommandLine.addFunction()
-def startCythan(name:str,**kwargs) -> "start <name>":
-  """Start the Cythan machine on a program compiled in cythan place in the 'program' folder"""
-  f = open("program/"+name+".cyt","r")
+def loadCythan(name:str,**kwargs) -> "load <fileName>":
+  """Load the Cythan machine on a program compiled in cythan place in the 'program' folder.
+The name dosn't count the extention.
+Exemple: 'load myprog' will get the file at 'program/myprog.cyt'"""
+  try:
+    f = open("program/"+name+".cyt","r")
+  except FileNotFoundError:
+    return AssertionError("Program not found at: 'program/"+name+".cyt'")
   d = f.read()
   f.close()
   data = [[int(y) for y in x.split(",")] for x in d.split(";")]
-  CythanInstanceManager.addInstance(data=data)
+  try:
+    InstanceManager.addInstance(name,data=data)
+  except KeyError:
+    raise AssertionError("No machine called "+name)
   return "done"
+
 
 
 
@@ -123,9 +201,7 @@ In the order : DEBUG, INFO, TEST, WARNING, ERRORS. You can use custom log type n
 
 @CommandLine.addFunction()
 def quit(**kwargs) -> "quit":
-  '''
-  To quit propely the command manager
-  '''
+  '''To quit propely the command manager'''
   CommandLine.quit = True
   return "Bye !"
 
@@ -138,9 +214,7 @@ def clear(**kwargs) -> "clear":
 
 @CommandLine.addFunction()
 def help(info:(str,""),**kwargs) -> "help [command]":
-  '''
-  Print the help for a command
-  '''
+  '''Print the help for a command'''
   if info == "": return "Command list :\n\n"+"\n".join([fct.__name__ for fct in CommandLine.funct])+"\n\nWrite 'help COMMAND' for more information about a command.\nWrite 'help cmd' for more information about the command line."
 
   for funct in CommandLine.funct:
