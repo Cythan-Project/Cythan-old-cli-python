@@ -23,8 +23,10 @@ class CythanMachine():
       except:raise Errors.DataUnreachable("PPP: Data["+str(PP)+"] is not reachable")
       try:
         if PPP[0] == -1: dataToSet = [-1,-1]
-        elif PPP[1] == -1:raise Errors.EndPoint("Machine Ended with code "+str(PPP[0]))
+        elif PPP[1] == -1:raise Errors.EndPoint("Machine Ended with code "+str(self.data[PPP[0]]))
       except Errors.EndPoint:raise
+      except IndexError:
+        raise Errors.EndPoint("Machine Ended with code from unreadable data positionned at cell "+str(PPP[0]))
       except BaseException:
         raise Errors.MinusOneRuleError("HARDWARE got a -1 rule problem.")
 
