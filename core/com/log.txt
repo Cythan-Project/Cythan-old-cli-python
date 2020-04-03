@@ -1,727 +1,129 @@
 
-[2020-03-29 21:49:24] Start
-DEBUG - [2020-03-29 21:49:24] {core.Linker} <module>: Linker imported
-DEBUG - [2020-03-29 21:49:24] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-03-29 21:49:24] {__main__} <module>: Setting up Command
-DEBUG - [2020-03-29 21:49:24] {__main__} <module>: Setting up Linker
-INFO - [2020-03-29 21:49:24] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-03-29 21:49:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-03-29 21:49:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Liste des fonctions :
+[2020-04-03 09:13:40] Start
+DEBUG - [2020-04-03 09:14:00] {core.Linker} <module>: Linker imported
+DEBUG - [2020-04-03 09:14:14] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-04-03 09:14:14] {__main__} <module>: Setting up Command
+DEBUG - [2020-04-03 09:14:14] {__main__} <module>: Setting up Linker
+DEBUG - [2020-04-03 09:14:14] {__main__} <module>: Setting up Compiler
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for nextgen, arguments is machineName:<class 'str'>, nbGen:(<class 'int'>, 1)
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for debug, arguments is machineName:<class 'str'>
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for listCythan, arguments is typeToFind:<class 'str'>
+INFO - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: No alises found
+INFO - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Aliases = 
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for addBreak, arguments is machineName:<class 'str'>, value:<class 'int'>, position:<class 'int'>, subPosition:(<class 'int'>, 0)
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for compileBCL, arguments is subcommand:<class 'str'>, arg1:<class 'str'>, arg2:(<class 'str'>, '')
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for loadCythan, arguments is name:<class 'str'>
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for logs, arguments is command:<class 'str'>, param:(<class 'str'>, None)
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for quit, arguments is 
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for clear, arguments is 
+DEBUG - [2020-04-03 09:14:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for help, arguments is info:(<class 'str'>, '')
+INFO - [2020-04-03 09:14:14] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-04-03 09:14:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['l', 'or']
+DEBUG - [2020-04-03 09:14:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:14:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
+DEBUG - [2020-04-03 09:14:32] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['b', 'or', '100', '19', '1']
+DEBUG - [2020-04-03 09:14:32] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:14:32] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 100 will be in 19:1
+DEBUG - [2020-04-03 09:14:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:14:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:15:03] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
+DEBUG - [2020-04-03 09:15:19] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:15:19] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:15:24] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
+DEBUG - [2020-04-03 09:15:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or', '20']
+DEBUG - [2020-04-03 09:15:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
 
-next [INT] [MACHINE_ID]
-configure [MACHINE_ID] [*KWARGS]
-infos [MACHINE_ID] [DATA_START] [NUMBER_OF_BYTE]
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
+[2020-04-03 09:16:16] Start
+DEBUG - [2020-04-03 09:16:21] {core.Linker} <module>: Linker imported
+DEBUG - [2020-04-03 09:16:21] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-04-03 09:16:21] {__main__} <module>: Setting up Command
+DEBUG - [2020-04-03 09:16:21] {__main__} <module>: Setting up Linker
+DEBUG - [2020-04-03 09:16:21] {__main__} <module>: Setting up Compiler
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for nextgen, arguments is machineName:<class 'str'>, nbGen:(<class 'int'>, 1)
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for debug, arguments is machineName:<class 'str'>
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for listCythan, arguments is typeToFind:<class 'str'>
+INFO - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: No alises found
+INFO - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Aliases = 
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for addBreak, arguments is machineName:<class 'str'>, value:<class 'int'>, position:<class 'int'>, subPosition:(<class 'int'>, 0)
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for compileBCL, arguments is subcommand:<class 'str'>, arg1:<class 'str'>, arg2:(<class 'str'>, '')
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for loadCythan, arguments is name:<class 'str'>
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for logs, arguments is command:<class 'str'>, param:(<class 'str'>, None)
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for quit, arguments is 
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for clear, arguments is 
+DEBUG - [2020-04-03 09:16:21] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for help, arguments is info:(<class 'str'>, '')
+INFO - [2020-04-03 09:16:22] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-04-03 09:16:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['l', 'or']
+DEBUG - [2020-04-03 09:16:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:16:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
+DEBUG - [2020-04-03 09:16:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['b', 'or', '100', '18', '0']
+DEBUG - [2020-04-03 09:16:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:16:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 100 will be in 18:0
+DEBUG - [2020-04-03 09:16:55] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:16:55] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
 
-Tapez 'help COMMANDE' pour plus d'informations sur une commande en particulier.
-Tapez 'help cmd' pour les informations d'utillisation de la ligne de commandes.
-DEBUG - [2020-03-29 21:49:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'configure']
-DEBUG - [2020-03-29 21:49:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour configure:
-Syntaxe: configure [MACHINE_ID] [*KWARGS]
+[2020-04-03 09:17:40] Start
+DEBUG - [2020-04-03 09:17:44] {core.Linker} <module>: Linker imported
+DEBUG - [2020-04-03 09:17:44] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-04-03 09:17:44] {__main__} <module>: Setting up Command
+DEBUG - [2020-04-03 09:17:44] {__main__} <module>: Setting up Linker
+DEBUG - [2020-04-03 09:17:44] {__main__} <module>: Setting up Compiler
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for nextgen, arguments is machineName:<class 'str'>, nbGen:(<class 'int'>, 1)
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for debug, arguments is machineName:<class 'str'>
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for listCythan, arguments is typeToFind:<class 'str'>
+INFO - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: No alises found
+INFO - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Aliases = 
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for addBreak, arguments is machineName:<class 'str'>, value:<class 'int'>, position:<class 'int'>, subPosition:(<class 'int'>, 0)
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for compileBCL, arguments is subcommand:<class 'str'>, arg1:<class 'str'>, arg2:(<class 'str'>, '')
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for loadCythan, arguments is name:<class 'str'>
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for logs, arguments is command:<class 'str'>, param:(<class 'str'>, None)
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for quit, arguments is 
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for clear, arguments is 
+DEBUG - [2020-04-03 09:17:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for help, arguments is info:(<class 'str'>, '')
+INFO - [2020-04-03 09:17:44] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-04-03 09:17:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
+DEBUG - [2020-04-03 09:17:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:17:50] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
+DEBUG - [2020-04-03 09:17:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['b', 'or', '100', '18', '0']
+DEBUG - [2020-04-03 09:17:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:17:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 100 will be in 18:0
+DEBUG - [2020-04-03 09:18:07] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:18:07] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:18:26] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint met:
+At position 18:0
+DEBUG - [2020-04-03 09:18:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:18:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:18:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint met:
+At position 18:0
 
-Yes
-
-[2020-03-29 22:16:42] Start
-DEBUG - [2020-03-29 22:16:42] {core.Linker} <module>: Linker imported
-DEBUG - [2020-03-29 22:16:42] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Command
-DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Linker
-DEBUG - [2020-03-29 22:16:42] {__main__} <module>: Setting up Compiler
-INFO - [2020-03-29 22:16:42] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-03-29 22:16:46] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler']
-DEBUG - [2020-03-29 22:16:46] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Erreur d'argument:
-Vous n'avez pas le bon nombre de paramètres.
-DEBUG - [2020-03-29 22:17:00] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
-DEBUG - [2020-03-29 22:17:00] {__main__} compileBCL: loading BCL file at: 'program/or.txt
-DEBUG - [2020-03-29 22:17:00] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
-
-[2020-03-29 22:17:19] Start
-DEBUG - [2020-03-29 22:17:19] {core.Linker} <module>: Linker imported
-DEBUG - [2020-03-29 22:17:19] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Command
-DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Linker
-DEBUG - [2020-03-29 22:17:19] {__main__} <module>: Setting up Compiler
-INFO - [2020-03-29 22:17:19] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-03-29 22:17:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
-DEBUG - [2020-03-29 22:17:31] {__main__} compileBCL: loading BCL file at: 'program/or.txt
-DEBUG - [2020-03-29 22:17:31] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
-DEBUG - [2020-03-29 22:17:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Compiled succesfully at 'program/or.cyt'
-
-[2020-03-29 22:18:27] Start
-DEBUG - [2020-03-29 22:18:27] {core.Linker} <module>: Linker imported
-DEBUG - [2020-03-29 22:18:27] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Command
-DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Linker
-DEBUG - [2020-03-29 22:18:27] {__main__} <module>: Setting up Compiler
-INFO - [2020-03-29 22:18:27] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-03-29 22:18:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['compiler', 'compile', 'program/or.txt']
-DEBUG - [2020-03-29 22:18:49] {__main__} compileBCL: loading BCL file at: 'program/or.txt
-DEBUG - [2020-03-29 22:18:49] {__main__} compileBCL: saving cyt at: 'program/or.cyt'
-DEBUG - [2020-03-29 22:18:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Compiled succesfully at 'program/or.cyt'
-
-[2020-03-30 09:23:00] Start
-DEBUG - [2020-03-30 09:23:00] {core.Linker} <module>: Linker imported
-DEBUG - [2020-03-30 09:23:00] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-03-30 09:23:00] {__main__} <module>: Setting up Command
-DEBUG - [2020-03-30 09:23:00] {__main__} <module>: Setting up Linker
-DEBUG - [2020-03-30 09:23:00] {__main__} <module>: Setting up Compiler
-INFO - [2020-03-30 09:23:00] {__main__} <module>: Launching Commands menu
-
-[2020-04-02 10:00:20] Start
-DEBUG - [2020-04-02 10:00:20] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 10:00:20] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 10:00:20] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 10:00:20] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 10:00:20] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 10:00:20] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 10:00:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-04-02 10:00:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Command list :
-
-next <MACHINE_NAME> [INT]
-break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))
-start <fileName>
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
-
-Write 'help COMMAND' for more information about a command.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 10:01:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-
-[2020-04-02 10:02:15] Start
-DEBUG - [2020-04-02 10:02:15] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 10:02:15] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 10:02:15] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 10:02:15] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 10:02:15] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 10:02:15] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 10:02:19] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-
-[2020-04-02 10:03:14] Start
-DEBUG - [2020-04-02 10:03:14] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 10:03:14] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 10:03:14] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 10:03:14] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 10:03:14] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 10:03:14] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 10:03:16] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-
-[2020-04-02 10:04:52] Start
-DEBUG - [2020-04-02 10:04:52] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 10:04:52] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 10:04:52] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 10:04:52] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 10:04:52] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 10:04:52] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 10:04:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-DEBUG - [2020-04-02 10:04:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 10:05:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '1']
-
-[2020-04-02 10:09:45] Start
-DEBUG - [2020-04-02 10:09:45] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 10:09:45] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 10:09:45] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 10:09:45] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 10:09:45] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 10:09:45] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 10:09:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-DEBUG - [2020-04-02 10:09:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 10:09:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-
-[2020-04-02 11:06:49] Start
-DEBUG - [2020-04-02 11:06:49] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:06:49] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:06:49] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:06:49] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:06:49] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:06:49] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:06:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-DEBUG - [2020-04-02 11:06:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:06:57] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-
-[2020-04-02 11:07:55] Start
-DEBUG - [2020-04-02 11:07:56] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:07:56] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:07:56] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:07:56] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:07:56] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:07:56] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:08:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-DEBUG - [2020-04-02 11:08:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:08:15] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', 'qsd']
-DEBUG - [2020-04-02 11:08:15] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 11:08:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-
-[2020-04-02 11:09:08] Start
-DEBUG - [2020-04-02 11:09:09] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:09:09] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:09:09] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:09:09] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:09:09] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:09:09] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:09:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['start', 'or']
-DEBUG - [2020-04-02 11:09:14] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:09:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '5']
-
-[2020-04-02 11:10:06] Start
-DEBUG - [2020-04-02 11:10:06] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:10:06] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:10:06] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:10:06] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:10:06] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:10:06] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:10:09] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:10:09] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:10:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 11:10:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 11:10:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '2']
-
-[2020-04-02 11:26:28] Start
-DEBUG - [2020-04-02 11:26:28] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:26:28] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:26:28] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:26:28] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:26:28] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:26:28] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:26:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-
-[2020-04-02 11:27:45] Start
-DEBUG - [2020-04-02 11:27:45] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:27:45] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:27:45] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:27:45] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:27:45] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:27:45] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:27:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-04-02 11:27:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Command list :
-
-next <MACHINE_NAME> [INT]
-break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))
-load <fileName>
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
-
-Write 'help COMMAND' for more information about a command.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 11:27:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['gelp', 'next']
-DEBUG - [2020-04-02 11:27:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unknow command.
-Write 'help' for command list.
-DEBUG - [2020-04-02 11:27:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'next']
-DEBUG - [2020-04-02 11:27:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour next:
-Syntaxe: next <MACHINE_NAME> [INT]
-
-Execute the Cythan Code of the machine.
-DEBUG - [2020-04-02 11:28:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'help']
-DEBUG - [2020-04-02 11:28:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour help:
-Syntaxe: help [command]
-
-Print the help for a command
-DEBUG - [2020-04-02 11:28:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'load']
-DEBUG - [2020-04-02 11:28:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour load:
-Syntaxe: load <fileName>
-
-Load the Cythan machine on a program compiled in cythan place in the 'program' folder.
-The name dosn't count the extention.
-Exemple: 'load myprog' will get the file at 'program/myprog.cyt'
-DEBUG - [2020-04-02 11:28:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:28:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:28:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 11:28:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 11:28:40] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'ot', '50']
-
-[2020-04-02 11:29:34] Start
-DEBUG - [2020-04-02 11:29:34] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:29:34] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:29:34] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:29:34] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:29:34] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:29:34] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:29:38] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-
-[2020-04-02 11:30:20] Start
-DEBUG - [2020-04-02 11:30:20] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:30:20] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:30:20] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:30:20] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:30:20] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:30:20] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:30:23] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-04-02 11:30:23] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Command list :
-
-next <MACHINE_NAME> [INT]
-break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))
-load <fileName>
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
-
-Write 'help COMMAND' for more information about a command.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 11:30:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['hqsdf']
-DEBUG - [2020-04-02 11:30:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unknow command.
-Write 'help' for command list.
-DEBUG - [2020-04-02 11:30:30] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-
-[2020-04-02 11:30:42] Start
-DEBUG - [2020-04-02 11:30:42] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:30:42] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:30:42] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:30:42] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:30:42] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:30:42] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:30:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 11:30:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: 'or'
-DEBUG - [2020-04-02 11:30:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'hello']
-DEBUG - [2020-04-02 11:30:49] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: 'hello'
-DEBUG - [2020-04-02 11:30:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'hello']
-
-[2020-04-02 11:33:31] Start
-DEBUG - [2020-04-02 11:33:32] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:33:32] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:33:32] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:33:32] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:33:32] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:33:32] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:33:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'd']
-DEBUG - [2020-04-02 11:33:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unknow command.
-Write 'help' for command list.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 11:33:36] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['qsd']
-DEBUG - [2020-04-02 11:33:36] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unknow command.
-Write 'help' for command list.
-DEBUG - [2020-04-02 11:33:39] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next']
-DEBUG - [2020-04-02 11:33:39] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 11:33:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 11:33:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: 'or'
-DEBUG - [2020-04-02 11:33:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:33:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:33:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 11:33:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-
-[2020-04-02 11:45:25] Start
-DEBUG - [2020-04-02 11:45:25] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:45:25] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:45:25] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:45:25] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:45:25] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:45:25] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:45:27] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list']
-DEBUG - [2020-04-02 11:45:27] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 11:45:33] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-04-02 11:45:33] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Command list :
-
-next <MACHINE_NAME> [INT]
-list (machine|program)
-break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))
-load <fileName>
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
-
-Write 'help COMMAND' for more information about a command.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 11:45:39] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'machine']
-DEBUG - [2020-04-02 11:45:39] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:
-DEBUG - [2020-04-02 11:46:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:46:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:46:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'machine']
-DEBUG - [2020-04-02 11:46:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:or
-
-[2020-04-02 11:46:37] Start
-DEBUG - [2020-04-02 11:46:37] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:46:37] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:46:37] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:46:37] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:46:37] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:46:37] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:46:38] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:46:38] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:46:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'machine']
-DEBUG - [2020-04-02 11:46:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:list of machines:
- - or
-DEBUG - [2020-04-02 11:46:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'program']
-
-[2020-04-02 11:47:20] Start
-DEBUG - [2020-04-02 11:47:20] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:47:20] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:47:20] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:47:20] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:47:20] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:47:20] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:47:24] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'program']
-DEBUG - [2020-04-02 11:47:24] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-name 'os' is not defined
-
-[2020-04-02 11:48:15] Start
-DEBUG - [2020-04-02 11:48:15] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 11:48:15] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 11:48:15] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 11:48:15] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 11:48:15] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 11:48:15] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 11:48:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help']
-DEBUG - [2020-04-02 11:48:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Command list :
-
-next <MACHINE_NAME> [INT]
-list (machine|program)
-break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))
-load <fileName>
-logs (read [COUNT]|setlevel [NAME])
-quit
-clear
-help [command]
-
-Write 'help COMMAND' for more information about a command.
-Write 'help cmd' for more information about the command line.
-DEBUG - [2020-04-02 11:48:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'program']
-DEBUG - [2020-04-02 11:48:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:list of programs:
- - or.cyt
-DEBUG - [2020-04-02 11:49:48] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 11:49:48] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 11:49:51] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'or']
-DEBUG - [2020-04-02 11:49:51] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-Second Argument must be 'machine' or 'program'
-DEBUG - [2020-04-02 11:49:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list']
-DEBUG - [2020-04-02 11:49:53] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 11:49:57] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['list', 'machine']
-DEBUG - [2020-04-02 11:49:57] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:list of machines:
- - or
-
-[2020-04-02 12:12:34] Start
-DEBUG - [2020-04-02 12:12:34] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:12:34] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:12:34] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:12:34] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:12:34] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:12:34] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:12:38] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:12:38] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: 'or'
-DEBUG - [2020-04-02 12:12:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:12:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:12:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:12:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]------------------------------BREAKPOINTS------------------------------------------------------------MODULES------------------------------Module manager is still in devellopement !
-
-[2020-04-02 12:13:06] Start
-DEBUG - [2020-04-02 12:13:06] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:13:06] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:13:06] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:13:06] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:13:06] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:13:06] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:13:09] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:13:09] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:13:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:13:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-[2020-04-02 12:14:05] Start
-DEBUG - [2020-04-02 12:14:05] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:14:06] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:14:06] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:14:06] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:14:06] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:14:06] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:14:11] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or']
-DEBUG - [2020-04-02 12:14:11] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 12:14:15] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['help', 'break']
-DEBUG - [2020-04-02 12:14:15] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:AIDE pour break:
-Syntaxe: break <MACHINE_NAME> <VALUE> [MEMORY_POSITION] [0|1]
-
-Add a breakpoint to the machine of the program called <MACHINE_NAME>.
-If no memory position is set, it will take data[0][0] (pointer position).
-Break will stop the machine once the memory at MEMORY_POSITION is <VALUE>.
-You can precise for positive number if it is on the first or second memory cell.
-Exemple:
- - 'break 20' will stop once the pointer position get to 20
- - 'break -5 3' will stop once -5 is in the 3:0 position
- - 'break -7 75 1' will stop once -7 is in the 75:1 position
-
-
-[2020-04-02 12:15:06] Start
-DEBUG - [2020-04-02 12:15:06] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:15:06] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:15:06] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:15:06] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:15:06] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:15:06] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:15:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:15:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:15:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:15:10] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-DEBUG - [2020-04-02 12:15:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '10']
-DEBUG - [2020-04-02 12:15:34] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 12:15:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '10', '2']
-DEBUG - [2020-04-02 12:15:42] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-addBreak() takes from 3 to 4 positional arguments but 5 were given
-
-[2020-04-02 12:18:04] Start
-DEBUG - [2020-04-02 12:18:04] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:18:04] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:18:04] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:18:04] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:18:04] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:18:04] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:18:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:18:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:18:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '20', '4']
-DEBUG - [2020-04-02 12:18:13] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or.
-DEBUG - [2020-04-02 12:19:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:19:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-
-[2020-04-02 12:20:21] Start
-DEBUG - [2020-04-02 12:20:21] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:20:21] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:20:21] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:20:21] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:20:21] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:20:21] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:20:23] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:20:23] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:20:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '20', '1']
-DEBUG - [2020-04-02 12:20:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 20 will be in 1:0
-DEBUG - [2020-04-02 12:20:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:20:44] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-
-[2020-04-02 12:21:14] Start
-DEBUG - [2020-04-02 12:21:15] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:21:15] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:21:15] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:21:15] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:21:15] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:21:15] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:21:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:21:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:21:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or', '5', '10']
-DEBUG - [2020-04-02 12:21:22] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-DEBUG - [2020-04-02 12:21:32] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '5', '10']
-DEBUG - [2020-04-02 12:21:32] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 5 will be in 10:0
-DEBUG - [2020-04-02 12:21:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:21:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-
-[2020-04-02 12:23:54] Start
-DEBUG - [2020-04-02 12:23:54] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:23:54] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:23:54] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:23:54] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:23:54] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:23:54] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:23:58] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:23:58] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:24:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['break', 'or', '5', '10']
-DEBUG - [2020-04-02 12:24:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 5 will be in 10:0
-DEBUG - [2020-04-02 12:24:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:24:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------DATA------------------------------
-pointer:1
-adding unit:1
-positive length:20
-negative length:100
-pointed:[-1, -2]
-------------------------------BREAKPOINTS------------------------------
-value = 5:position = 10
-------------------------------MODULES------------------------------
-Module manager is still in devellopement !
-
-
-[2020-04-02 12:26:13] Start
-DEBUG - [2020-04-02 12:26:13] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:26:13] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:26:13] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:26:13] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:26:13] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:26:13] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:26:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:26:17] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:26:26] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next']
-DEBUG - [2020-04-02 12:26:26] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Argument Error:
-You don't have the right number of parameters
-DEBUG - [2020-04-02 12:26:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:26:29] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:26:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '20']
-DEBUG - [2020-04-02 12:26:35] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-HARDWARE got a -1 rule problem.
-DEBUG - [2020-04-02 12:27:51] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['debug', 'or']
-DEBUG - [2020-04-02 12:27:51] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:DEBUGS INFOS :
-------------------------------------------------------------
-DATA
-------------------------------------------------------------
-pointer:18
-adding unit:1
-positive length:20
-negative length:100
-pointed:[100, -1]
-------------------------------------------------------------
-BREAKPOINTS
-------------------------------------------------------------
-------------------------------------------------------------
-MODULES
-------------------------------------------------------------
-Module manager is still in devellopement !
-
-
-[2020-04-02 12:28:40] Start
-DEBUG - [2020-04-02 12:28:40] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:28:40] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:28:40] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:28:40] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:28:40] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:28:40] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:28:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:28:45] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:28:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:28:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:28:48] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:[]
-DEBUG - [2020-04-02 12:28:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
-DEBUG - [2020-04-02 12:28:52] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unknow command.
-Write 'help' for command list.
-DEBUG - [2020-04-02 12:28:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:28:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:28:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:28:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:28:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:28:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:29:01] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:29:01] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:29:06] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '5']
-DEBUG - [2020-04-02 12:29:06] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:29:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '2']
-DEBUG - [2020-04-02 12:29:12] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.
-DEBUG - [2020-04-02 12:29:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or']
-DEBUG - [2020-04-02 12:29:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-HARDWARE got a -1 rule problem.
-
-[2020-04-02 12:29:55] Start
-DEBUG - [2020-04-02 12:29:55] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:29:55] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:29:55] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:29:55] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:29:55] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:29:55] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:29:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:29:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:29:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', '18']
-DEBUG - [2020-04-02 12:29:59] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: '18'
-DEBUG - [2020-04-02 12:30:06] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '20']
-DEBUG - [2020-04-02 12:30:06] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-Machine Ended
-
-[2020-04-02 12:33:16] Start
-DEBUG - [2020-04-02 12:33:16] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:33:16] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:33:16] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:33:16] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:33:16] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:33:16] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:33:19] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:33:19] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:33:24] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '20']
-DEBUG - [2020-04-02 12:33:24] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-catching classes that do not inherit from BaseException is not allowed
-
-[2020-04-02 12:33:44] Start
-DEBUG - [2020-04-02 12:33:45] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:33:45] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:33:45] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:33:45] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:33:45] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:33:45] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:33:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:33:54] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:33:56] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', '20']
-DEBUG - [2020-04-02 12:33:57] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:No Cythan Machine have name: '20'
-DEBUG - [2020-04-02 12:34:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '20']
-DEBUG - [2020-04-02 12:34:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-DataToSet: Data[100] is not reachable
-
-[2020-04-02 12:34:40] Start
-DEBUG - [2020-04-02 12:34:40] {core.Linker} <module>: Linker imported
-DEBUG - [2020-04-02 12:34:40] {core.compiler} <module>: Compiler imported
-DEBUG - [2020-04-02 12:34:40] {__main__} <module>: Setting up Command
-DEBUG - [2020-04-02 12:34:40] {__main__} <module>: Setting up Linker
-DEBUG - [2020-04-02 12:34:40] {__main__} <module>: Setting up Compiler
-INFO - [2020-04-02 12:34:40] {__main__} <module>: Launching Commands menu
-DEBUG - [2020-04-02 12:34:43] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['load', 'or']
-DEBUG - [2020-04-02 12:34:43] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
-DEBUG - [2020-04-02 12:34:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['next', 'or', '20']
-DEBUG - [2020-04-02 12:34:47] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Unhandle Error:
-Machine Ended
+[2020-04-03 09:20:57] Start
+DEBUG - [2020-04-03 09:21:02] {core.Linker} <module>: Linker imported
+DEBUG - [2020-04-03 09:21:02] {core.compiler} <module>: Compiler imported
+DEBUG - [2020-04-03 09:21:02] {__main__} <module>: Setting up Command
+DEBUG - [2020-04-03 09:21:02] {__main__} <module>: Setting up Linker
+DEBUG - [2020-04-03 09:21:02] {__main__} <module>: Setting up Compiler
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for nextgen, arguments is machineName:<class 'str'>, nbGen:(<class 'int'>, 1)
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for debug, arguments is machineName:<class 'str'>
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for listCythan, arguments is typeToFind:<class 'str'>
+INFO - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: No alises found
+INFO - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Aliases = 
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for addBreak, arguments is machineName:<class 'str'>, value:<class 'int'>, position:<class 'int'>, subPosition:(<class 'int'>, 0)
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for compileBCL, arguments is subcommand:<class 'str'>, arg1:<class 'str'>, arg2:(<class 'str'>, '')
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for loadCythan, arguments is name:<class 'str'>
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for logs, arguments is command:<class 'str'>, param:(<class 'str'>, None)
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for quit, arguments is 
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for clear, arguments is 
+DEBUG - [2020-04-03 09:21:02] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> inner: Called for help, arguments is info:(<class 'str'>, '')
+INFO - [2020-04-03 09:21:02] {__main__} <module>: Launching Commands menu
+DEBUG - [2020-04-03 09:21:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['l', 'or']
+DEBUG - [2020-04-03 09:21:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:21:08] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:done
+DEBUG - [2020-04-03 09:21:16] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['b', 'or', '100', '18', '0']
+DEBUG - [2020-04-03 09:21:16] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:21:16] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint added to or. It will activate when value 100 will be in 18:0
+DEBUG - [2020-04-03 09:21:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:21:18] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:21:25] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Breakpoint met:
+At position 18:0 for value 100
+DEBUG - [2020-04-03 09:21:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: CMD:['n', 'or']
+DEBUG - [2020-04-03 09:21:28] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: function doesn't have caller
+DEBUG - [2020-04-03 09:21:31] {include.commandLineGenerator} <class 'include.commandLineGenerator.CommandLine'> __command: RET:Execution done.

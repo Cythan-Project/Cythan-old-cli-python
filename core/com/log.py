@@ -5,9 +5,12 @@ class Log():
 
     def __init__(self,**kwargs):
         self.__log_file = kwargs.get("log_file","core/com/log.txt")
-        self.log_levels = kwargs.get("log_level",["INFO","TEST","WARNING","ERROR"])
+        self.last = ""
+        self.log_levels = kwargs.get("log_level",[])
         with open(self.__log_file,"a") as f:
             f.write("\n["+strftime("%Y-%m-%d %H:%M:%S", gmtime())+"]"+" Start\n")
+        self.last = "\n["+strftime("%Y-%m-%d %H:%M:%S", gmtime())+"]"+" Start\n"
+        
     
     def __out(self,message,log_type):
         stack = inspect.stack()
@@ -23,6 +26,7 @@ class Log():
             print(("["+log_type+"] "+str(methodCaller)+": "+str(message)).replace("\n","\\n"))
         with open(self.__log_file,"a") as f:
             f.write(log+"\n")
+        self.last += log+"\n"
 
     def read(self,nbLines):
         f = open(self.__log_file,"r")

@@ -1,5 +1,5 @@
 import shlex
-
+from core import Errors
 import core.com as com
 
 # La classe de la ligne de commande
@@ -19,14 +19,13 @@ class CommandLine():
     self.__msgArguments = kwargs.get("argumentsError","You don't have the right number of parameters")
 
     self.__cmdErrorFeedback = kwargs.get("commandErrorFeedback",True)
-    self.__debug = kwargs.get("debug",True)
 
     self.activeSymbol = kwargs.get("activeSymbol","=> ")
   
   def setVars(self,kwargs):
     self.vars = kwargs
 
-  def addFunction(self,caller = None) -> "Methode de passage":
+  def addFunction(self,caller = None,**topKwargs) -> "Methode de passage":
     def inner(funct) -> "retourne la nouvelle fonction":
 
       def newFunct(*arg,**kwargs) -> "New function":
@@ -34,16 +33,18 @@ class CommandLine():
         def convert(typeIn,element):
           if typeIn == bool:
             try: element = bool(element)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[0]))
+            except:raise AssertionError(self.__msgWrgParam.replace("$",element).replace("$$",self.__paramList[0]))
           elif typeIn == str:
             try: element = str(element)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[1]))
+            except:raise AssertionError(self.__msgWrgParam.replace("$",element).replace("$$",self.__paramList[1]))
           elif typeIn == int:
             try: element = int(element)
-            except:raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[2]))
+            except:raise AssertionError(self.__msgWrgParam.replace("$",element).replace("$$",self.__paramList[2]))
           elif typeIn == float:
             try: element = float(element)
-            except: raise AssertionError(self.__msgWrgParam.replace("$",param).replace("$$",self.__paramList[3]))
+            except: raise AssertionError(self.__msgWrgParam.replace("$",element).replace("$$",self.__paramList[3]))
+          else:
+            com.Out.warning("Argument type not in standard converting sytem:"+str(typeIn)+" to convert :"+element+", keeping as string")
           return element
         # On rajoute le code de tester si les arguments sont bons
         new_args = []
@@ -76,17 +77,20 @@ class CommandLine():
 
       # Ajout au dictionnaire de la fonction
       newFunct.caller = caller # ajout du contexte self
+      names = topKwargs.get("aliases",[])
       self.funct.append(newFunct)
       self.funct[self.funct.index(newFunct)].__name__ = funct.__annotations__.pop("return")
       self.funct[self.funct.index(newFunct)].__doc__ = funct.__doc__
+      self.funct[self.funct.index(newFunct)].aliases = names
       
-      if self.__debug: print("Called for "+funct.__name__+", arguments is "+", ".join([i+":"+str(x) for i,x in funct.__annotations__.items()]))
+      com.Out.debug("Called for "+funct.__name__+", arguments is "+", ".join([i+":"+str(x) for i,x in funct.__annotations__.items()]))
+      if names == []:com.Out.info("No alises found")
+      if names == []:com.Out.info("Aliases = "+",".join(names))
       return newFunct # On retourne notre meilleure fonction.
     return inner
 
   # Commande principale, menu du terminal
   def menu(self):
-    if self.__debug: print("\n"*10)
     print(self.__msgStart)
     while not self.quit:
       commandes_raw = input(self.activeSymbol)
@@ -101,6 +105,7 @@ class CommandLine():
       trt_commande = shlex.split(commande)
       self.cmdReturn = self.__command(trt_commande)
     if self.cmdReturn != None: print(self.cmdReturn)
+    else:com.Out.debug("No print: non returning");
 
 
   # executer une commande
@@ -111,17 +116,24 @@ class CommandLine():
     returning = None
     find = False
     for funct in self.funct:
-      if funct.__name__.split(" ")[0] == execute[0]:
+      if execute[0] in [funct.__name__.split(" ")[0]]+funct.aliases:
         try:
-          if funct.caller: returning = funct(funct.caller,*execute[1:],**self.vars)
-          else:returning = funct(*execute[1:],**self.vars)
+          if funct.caller: com.Out.debug("function have caller");returning = funct(funct.caller,*execute[1:],**self.vars)
+          else:com.Out.debug("function doesn't have caller");returning = funct(*execute[1:],**self.vars)
         except AssertionError as err:
           returning ="Argument Error:\n"+str(err)
+        except Errors.BreakPointMet as err:
+          returning ="Breakpoint met:\n"+str(err)
+        except Errors.EndPoint as err:
+          returning ="Machine ended:\n"+str(err)
+        except Errors.CythanError as err:
+          returning ="Cythan Error:\n"+str(err)
         except BaseException as err:
-          returning = "Unhandle Error:\n"+str(err)
+          returning = "Unhandle Error:\n"+str(err)+"\nIf this is not your fault, please type make an GItHub issue with the content of 'log read 50'"
         finally:
           find =True
     if not find:
       returning = self.__msgUnknow
-    com.Out.debug("RET:"+str(returning))
+      com.Out.error("Unfind command");
+    if returning != None:com.Out.debug("RET:"+str(returning))
     return returning

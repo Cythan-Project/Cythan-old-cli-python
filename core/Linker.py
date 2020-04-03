@@ -15,8 +15,8 @@ class CythanInstance():
     for x in range(nb):
       self.machine.turn(1)
       for x in self.breakpoints:
-        if len(x) == 3 and self.machine.data[x[1]][x[2]] == x[0]: raise Errors.BreakPointMet("At position "+str(x[1])+":"+str(x[2]))
-        if len(x) == 2 and self.machine.negdata[-x[1]] == x[0]: raise Errors.BreakPointMet("At position "+str(x[1]))
+        if len(x) == 3 and self.machine.data[x[1]][x[2]] == x[0]: self.breakpoints.remove(x);raise Errors.BreakPointMet("At position "+str(x[1])+":"+str(x[2])+" for value "+str(x[0]))
+        if len(x) == 2 and self.machine.negdata[-x[1]] == x[0]: self.breakpoints.remove(x);raise Errors.BreakPointMet("At position "+str(x[1]))
 
 
   
@@ -35,8 +35,14 @@ class CythanInstanceManager():
 
   def addBreak(self,machineName,value,position,subPosition=None):
     try:
-      if subPosition == None:self.instances[machineName].breakpoints.append([value,position])
-      else:self.instances[machineName].breakpoints.append([value,position,subPosition])
+      if (position >= 0 and position >= len(self.instances[machineName].machine.data)) or (position < 0 and position <= -len(self.instances[machineName].machine.negdata)): raise AssertionError("Invalid position, program shorter than asked")
+      if subPosition != None and position < 0: raise AssertionError("Negative position doesn't have a second integers")
+      if subPosition == None:
+        if [value,position] in self.instances[machineName].breakpoints: self.instances[machineName].breakpoints.remove([value,position]);return False
+        else:self.instances[machineName].breakpoints.append([value,position]);return True
+      else:
+        if [value,position,subPosition] in self.instances[machineName].breakpoints: self.instances[machineName].breakpoints.remove([value,position,subPosition]);return False
+        else:self.instances[machineName].breakpoints.append([value,position,subPosition]);return True
     except KeyError:
       raise AssertionError()
 

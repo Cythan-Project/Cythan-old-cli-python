@@ -12,7 +12,7 @@ import os
 from random import randint, sample
 
 com.Out.debug("Setting up Command")
-CommandLine = include.commandLineGenerator.CommandLine(debug=False)
+CommandLine = include.commandLineGenerator.CommandLine()
 com.Out.debug("Setting up Linker")
 InstanceManager = CythanInstanceManager()
 ModuleManager = CythanModuleManager()
@@ -33,18 +33,18 @@ CompilerManager = BCLcompiler()
 # log command
 # log errors + print position in debug mode
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["n"])
 def nextgen(machineName:str,nbGen:(int,1),**kwargs) -> "next <MACHINE_NAME> [INT]":
   """Execute the Cythan Code of the machine."""
   try:
     InstanceManager.advance(machineName,nbGen)
   except Errors.BreakPointMet as err:
-    return "Breakpoint met at next "+str(x)+":"+err
+    raise Errors.BreakPointMet(err)
   except KeyError:
     return AssertionError("No Cythan Machine have name: '"+str(machineName)+"'")
   return "Execution done."
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["db"])
 def debug(machineName:str,**kwargs) -> "debug <MACHINE_NAME>":
   """Print information about the machine <MACHINE_NAME>"""
   try:
@@ -81,12 +81,13 @@ Use the 'debug' command for more informations"""
   raise AssertionError("Second Argument must be 'machine' or 'program'")
 
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["b","breakpoint"])
 def addBreak(machineName:str,value:int,position:int,subPosition:(int,0),**kwargs) -> "break <MACHINE_NAME> <VALUE> <MEMORY_POSITION> [0|1]":
   """Add a breakpoint to the machine of the program called <MACHINE_NAME>.
 If no memory position is set, it will take data[0][0] (pointer position).
 Break will stop the machine once the memory at MEMORY_POSITION is <VALUE>.
 You can precise for positive number if it is on the first or second memory cell.
+Breakpoint remove automatially when met, but you can delete one by typing the same command that you type when you place it
 Exemple:
  - 'break machine 20' will stop once the pointer position get to 20
  - 'break machine -5 3' will stop once -5 is in the 3:0 position
@@ -95,15 +96,15 @@ Exemple:
   if position < 0:isneg = True
   else:isneg = False
   try:
-    if isneg:InstanceManager.addBreak(machineName,value,position)
-    else:InstanceManager.addBreak(machineName,value,position,subPosition)
+    if isneg:ret = InstanceManager.addBreak(machineName,value,position)
+    else:ret = InstanceManager.addBreak(machineName,value,position,subPosition)
   except KeyError:
     return AssertionError("No Cythan Machine have name: '"+str(machineID)+"'")
-  return "Breakpoint added to "+machineName+". It will activate when value "+str(value)+" will be in "+str(position)+":"+str(subPosition)
+  if ret == True:return "Breakpoint added to "+machineName+". It will activate when value "+str(value)+" will be in "+str(position)+":"+str(subPosition)
+  if ret == False:return "Breakpoint remove from "+machineName
 
 
-
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["c"])
 def compileBCL(subcommand:str,arg1:str,arg2:(str,""),**kwargs) -> "compiler (compile <input_path> [output_name]|configure (reset|<element> <character>))":
   """Compile a BCL language to Cythan code.
   compiler compile <input_path> <output_name>:
@@ -142,7 +143,7 @@ def compileBCL(subcommand:str,arg1:str,arg2:(str,""),**kwargs) -> "compiler (com
   else: return AssertionError("Syntax Error : first argument must be 'compile' or 'configure'")
 
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["l"])
 def loadCythan(name:str,**kwargs) -> "load <fileName>":
   """Load the Cythan machine on a program compiled in cythan place in the 'program' folder.
 The name dosn't count the extention.
@@ -168,21 +169,22 @@ Exemple: 'load myprog' will get the file at 'program/myprog.cyt'"""
 # |  General Commands
 # O---------------
 
-@CommandLine.addFunction()
-def logs(command:str,param:(str,None),**kwargs) -> "logs (read [COUNT]|setlevel [NAME])":
+@CommandLine.addFunction(aliases=["log"])
+def logs(command:str,param:(str,None),**kwargs) -> "logs (read [<COUNT>|last]|setlevel [NAME])":
   """Setup logs informations.
  - Use logs read to print the log file.
-Indicate the number of line. -1 for the entire file. Default is 20
- - Use logs setlevels to set you're console debuging logs levels.
+Indicate the number of lines to read. -1 for the entire file. Default is 20. 'last' is for the logs of the last execution of cythan code.
+ - Use logs setlevels to set your console debuging logs levels.
 In the order : DEBUG, INFO, TEST, WARNING, ERRORS. You can use custom log type name. Default is ["INFO","TEST","WARNING","ERROR"].
 """
   if command == "read":
     if param == None:param = 20
+    if param == "last":return com.Out.last
     else: 
       try:
         param = int(param)
       except ValueError:
-        raise AssertionError("logs read [COUNT], Count must be a integrer")
+        raise AssertionError("logs read [<COUNT>|last], Count must be a integrer or the word 'last'")
     return "".join(com.Out.read(param))
   elif command == "setlevel":
     if param == None:
@@ -199,26 +201,26 @@ In the order : DEBUG, INFO, TEST, WARNING, ERRORS. You can use custom log type n
 
 
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["exit"])
 def quit(**kwargs) -> "quit":
   '''To quit propely the command manager'''
   CommandLine.quit = True
   return "Bye !"
 
-@CommandLine.addFunction()
+@CommandLine.addFunction(aliases=["cls"])
 def clear(**kwargs) -> "clear":
   '''
   Clear the screen
   '''
   print("\n"*100)
 
-@CommandLine.addFunction()
-def help(info:(str,""),**kwargs) -> "help [command]":
+@CommandLine.addFunction(aliases=["?"])
+def help(info:(str,""),**kwargs) -> "help [<COMMAND>|cmd]":
   '''Print the help for a command'''
-  if info == "": return "Command list :\n\n"+"\n".join([fct.__name__ for fct in CommandLine.funct])+"\n\nWrite 'help COMMAND' for more information about a command.\nWrite 'help cmd' for more information about the command line."
+  if info == "": return "Command list :\n\n"+"\n".join([fct.__name__+" | aliases="+str(",".join(fct.aliases)) for fct in CommandLine.funct])+"\n\nWrite 'help COMMAND' for more information about a command.\nWrite 'help cmd' for more information about the command line."
 
   for funct in CommandLine.funct:
-    if funct.__name__.split(" ")[0] == info:return "AIDE pour "+funct.__name__.split(" ")[0]+":\nSyntaxe: "+funct.__name__+"\n"+"\n"+str(funct.__doc__)
+    if info in [funct.__name__.split(" ")[0]]+funct.aliases:return "AIDE pour "+funct.__name__.split(" ")[0]+" with aliases "+str(",".join(funct.aliases))+":\nSyntaxe: "+funct.__name__+"\n"+"\n"+str(funct.__doc__)
   if info == "cmd": return """
 You can execute multiples command withe the character ';.
 
